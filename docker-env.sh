@@ -1,25 +1,12 @@
 sudo yum update -y
 
-yum -y install docker-io
+sudo curl -sSL https://get.docker.com | sh
 
-service docker start
-
-if [ -e "/etc/docker/daemon.json" ]; then
-  rm -f -r /etc/docker/daemon.json
-fi
-
-touch /etc/docker/daemon.json
-
-echo '{
-  "registry-mirrors": ["https://2wdsun7e.mirror.aliyuncs.com"]
-}' >> /etc/docker/daemon.json
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 
 systemctl enable docker
+systemctl start docker
 
 service docker restart
-
-yum install python-pip.noarch
-
-sudo pip install --upgrade pip
 
 pip install docker-compose
