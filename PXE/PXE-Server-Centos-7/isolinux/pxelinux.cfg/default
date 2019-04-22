@@ -1,0 +1,17 @@
+default vesamenu.c32
+timeout 200
+menu background splash.png
+ontimeout local
+label ks
+  menu label ^Install CentOS7 using Kickstart - LordBaseX
+  menu default
+  kernel vmlinuz
+  append initrd=initrd.img ip=dhcp ksdevice=link ks=http://127.0.0.1/ks/centos7-ks.cfg
+label repo
+  menu label ^Install CentOS7 without Kickstart
+  kernel vmlinuz
+  append initrd=initrd.img ip=dhcp ksdevice=link repo=http://mirror.centos.org/centos/7/os/x86_64/
+label local
+  menu label Boot from Hard Drive
+  localboot 0xffff
+#

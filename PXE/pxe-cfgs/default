@@ -1,0 +1,36 @@
+default menu.c32
+menu title  TESTETST
+prompt 0
+timeout 300
+ontimeout local
+
+label local
+        menu label ^Local Drive
+        localboot 0xffff
+
+label coreos-inst
+        menu default
+        kernel coreos_production_pxe.vmlinuz
+        initrd coreos_production_pxe_image.cpio.gz
+        append coreos.first_boot=1 console=tty0 console=ttyS0 coreos.autologin=tty1 coreos.autologin=ttyS0 coreos.config.url=http://center.ace.local/pxe.ign
+label noignition
+        kernel coreos_production_pxe.vmlinuz
+        initrd coreos_production_pxe_image.cpio.gz
+        append coreos.first_boot=1 console=tty0 console=ttyS0 coreos.autologin=tty1 coreos.autologin=ttyS0 
+
+label obsd61
+        menu label OpenBSD 6.1 amd64 release
+        kernel pxechain.com
+        append ::pxeboot
+
+label install  centos7.1611man
+        menu label CentOS^7 1611 Manually
+        kernel c7.1611/vmlinuz
+        initrd c7.1611/initrd.img
+        append  inst.repo=http://center.ace.local/c7.1611/
+
+label install  centos7.1611wks
+        menu label CentOS^7 1611 with KickStart
+        kernel c7.1611/vmlinuz
+        initrd c7.1611/initrd.img
+        append ks=http://center.ace.local/c7ks.ks inst.repo=http://center.ace.local/c7.1611/

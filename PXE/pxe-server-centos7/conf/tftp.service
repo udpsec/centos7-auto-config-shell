@@ -1,0 +1,9 @@
+[Unit]
+Description=Tftp Server
+
+[Service]
+ExecStart=/usr/sbin/in.tftpd -vvv -s /var/lib/tftpboot
+StandardInput=socket
+#
+# systemctl daemon-reload
+#

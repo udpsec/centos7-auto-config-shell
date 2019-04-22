@@ -1,0 +1,103 @@
+error:
+	1.yum 
+		another app is currently holding the yum lock;
+		#rm -f /var/run/yum.pid
+1. network
+	/etc/sysconfig/network-scripts/ifcfg-eth0 [onboot = YES]
+2. yum 163
+	yum clean all
+	yum makecache
+3.systemctl [start|stop|restart|enable|disable] "".service
+
+
+4.python3.6
+	yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
+	yum groupinstall "Development Tools"
+	yum install gcc gcc-c++ kernel-devel psycopg2
+
+	links:
+		http://www.zhimengzhe.com/linux/196468.html
+
+	# wgethttps://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+
+	# tar -xzvf Python-3.6.0.tgz -C /tmp
+
+	# cd/tmp/Python-3.6.0/
+
+	把Python3.6安装到/usr/local 目录
+
+	# ./configure --prefix=/usr/local
+
+	# make
+
+	# make altinstall
+
+
+	python3.6程序的执行文件：/usr/local/bin/python3.6
+
+	python3.6应用程序目录：/usr/local/lib/python3.6
+
+	pip3的执行文件：/usr/local/bin/pip3.6
+
+	pyenv3的执行文件：/usr/local/bin/pyenv-3.6
+
+
+	更改/usr/bin/python链接
+
+	# cd/usr/bin
+
+	# mv python python.backup
+
+	# ln -s /usr/local/bin/python3.6 /usr/bin/python
+
+	# ln -s /usr/local/bin/python3.6 /usr/bin/python3
+
+
+	更改yum脚本的python依赖
+
+	# cd /usr/bin
+
+	# ls yum*
+
+	yum yum-config-manager yum-debug-restore yum-groups-manager
+
+	yum-builddep yum-debug-dump yumdownloader
+
+	更改以上文件头为
+
+	#!/usr/bin/python改为#!/usr/bin/python2
+
+
+	修改gnome-tweak-tool配置文件
+
+	#vi /usr/bin/gnome-tweak-tool
+
+	#!/usr/bin/python改为#!/usr/bin/python2
+
+
+	修改urlgrabber配置文件
+
+	# vi /usr/libexec/urlgrabber-ext-down
+
+	#!/usr/bin/python改为#!/usr/bin/python2
+
+
+
+
+
+5.java install
+
+	download java8.tar
+	tar -zvxf java8.tar
+	cp -r java8 /myjava/
+
+	vim /etc/profile
+	
+	export JAVA_HOME=/wocloud/java/jdk1.8.0_131
+	export JRE_HOME=/wocloud/java/jdk1.8.0_131/jre
+	export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
+	export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+
+	
+
+	

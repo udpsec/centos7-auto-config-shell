@@ -1,0 +1,57 @@
+FMS - Factory.moe Management Script
+Factory.Moe的服务器维护管理脚本，适用于 CentOS 7 系统。
+用于最小化安装 CentOS 7 系统后,常用软件安装、配置及服务器管理。
+
+# Python3.sh
+    编译安装Python3
+
+# ShadowSocks
+    ss-server.sh	(服务器)
+    ss-local.sh		(客户端)
+  使用 Python3 安装 ShadowSocks
+  设置：
+    |-服务器IP
+    |-端口
+    |-密码
+    |-加密方式 (选择 aes-256-cfb 或 chacha20 ，推荐使用 chacha20)
+
+# Django-install.sh	(功能暂未完成)
+	使用 Python3 安装 Django 框架。
+
+# BasicSet.sh
+  说明：
+    安装完 CentOS7 以后的一些简单设置，直接写个脚本执行，一个个输入命令太麻烦。
+  功能：
+    |-更新系统软件
+    |-更改主机名
+    |-更改主机时区为 '亚洲/上海'
+    |-创建有sudo权限的普通用户，并设置密码
+    |-更改ssh端口
+    |-禁止ROOT用户使用ssh登录
+    |-更改ssh登录时间限制
+    |-关闭firewall防火墙
+    |-关闭SELinux
+    |-重启系统
+
+# LAMP-install-yum.sh
+	使用yum安装 httpd MariaDB 及 PHP
+	安装方便，使用稳定。但是版本太低。
+	不过能用就行啊……
+
+# Apache2.sh	Nginx.sh	PHP7.sh
+	使用编译的方法安装,版本更高，支持更多新的特性。
+	但是可能会产生各种不可预料的问题。
+	以及缺少一些模块、扩展功能。
+
+# backup-web.sh
+	备份网站所在文件夹，使用tar压缩并打包。
+		html		默认地址：/etc/www/html
+	备份数据库内容,需要设置要备份的数据库名、MySQL的用户名及密码
+		backup		备份文件位置
+		sql_name	需要备的数据库名
+		sql_user	MySQL用户名，默认用户名：root
+		sql_passwd	MySQL密码
+
+# backup-everyday.sh(开发中)
+	每天固定时间备份网站文件及数据库，备份的数据将被储存7天，7天后删除。
+		time		每天备份程序的时间（时区以主机时区为准

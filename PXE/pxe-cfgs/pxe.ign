@@ -1,0 +1,35 @@
+{
+  "ignition": {
+    "version": "2.0.0",
+    "config": {}
+  },
+  "storage": {},
+  "systemd": {
+    "units": [
+      {
+        "name": "etcd2.service",
+        "enable": true
+      }
+    ]
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMfcTmwE96zjUC5HqmgHJ9eWHZD/QyrzzfI5Fnmor7HqaUhzwvvEZDZAr2HbapEjcobCplPXFRGpOri/Z1bgfveWrM+K3l1wBb/bJuZD8EOxxwTfoJJJ9xa3H3Jcb8ok79kIdi6dulajHm0OYO9FlMsNVNCS46MCQDi/u0XEzOp8xUINKjh2LvRPZHhEaIHrn4kdO4eysPQZNlPFNdWfhZQlwOA/+RUj+nEdvRIF2y866UFhMXGu7uJI9PmXlnfr61vKWAVpNuDZsXANZb1ZVr3GP45H43CrXPvzdg3SC7UQV9O2eEQJJEVtxT2PNrwkhsCMpI7ZR+tiahnOXfk0Az"
+        ]
+      },{
+	"name": "kadmin",
+	"passwordHash": "$6$YMkdl2$/3Et8RppwDdE8EytgYUiFEvx4qlwOJ349JE.m2lQMcb6dI2.b/xNk0PLyEmlhL6A66nh1ljJZ01uD6gdis3Aa0",
+	"create" : {
+		"groups": [
+		"sudo",
+		"docker"
+		]
+	}
+	}
+    ]
+  }
+}

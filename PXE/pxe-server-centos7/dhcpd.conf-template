@@ -1,0 +1,29 @@
+#
+# DHCP Server Configuration file.
+#   see /usr/share/doc/dhcp*/dhcpd.conf.example
+#   see dhcpd.conf(5) man page
+#
+allow booting;
+default-lease-time 600;
+max-lease-time 7200;
+authoritative;
+
+option space pxelinux;
+option pxelinux.magic code 208 = string;
+option pxelinux.configfile code 209 = text;
+option pxelinux.pathprefix code 210 = text;
+option pxelinux.reboottime code 211 = unsigned integer 32;
+
+subnet 192.168.100.0 netmask 255.255.255.0 {
+  option routers 192.168.100.1;
+  option broadcast-address 192.168.100.254;
+  range 192.168.100.231 192.168.100.253;
+  next-server 192.168.100.1;
+  filename "pxelinux.0";
+}
+
+#host node1 {
+#  hardware ethernet 08:00:27:C1:C1:DE;
+#  fixed-address 192.168.100.201;
+#  option host-name "node1";
+#}
