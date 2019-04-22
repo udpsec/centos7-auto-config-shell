@@ -27,7 +27,7 @@ echo '$      Maven3.6 install ...           $'
 echo '$                                     $'
 echo '======================================='
 
-wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+wget https://mirrors.ustc.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
 
 tar -xzvf apache-maven-3.6.1-bin.tar.gz
 
@@ -69,7 +69,7 @@ source /etc/profile
 # echo '*                                     *'
 # echo '***************************************'
 
-wget https://mirrors.ustc.edu.cn/apache//tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
+wget https://mirrors.ustc.edu.cn/apache/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz
 
 
 
