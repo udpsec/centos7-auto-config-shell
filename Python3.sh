@@ -7,7 +7,7 @@
 # 作者:  Selphia (sp), admin@factory.moe
 
 # 变量
-python="3.6.2"
+python="3.7.3"
 
 ### 检测是否安装GCC
 gcc --version

@@ -79,7 +79,7 @@ rm -f -r apache-tomcat-8.5.40.tar.gz
 
 mv  apache-tomcat-8.5.40 /opt/java/apache-tomcat-8.5
 
-cd /opt/opt/java/apache-tomcat-8.5/bin/
+cd /opt/java/apache-tomcat-8.5/bin/
 
 ./startup.sh
 
